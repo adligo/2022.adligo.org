@@ -36,11 +36,6 @@ fun dependsOnITests4j(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_tests4j.adligo.org"))
 }
 
-fun dependsOnAllIs(dhs: DependencyHandlerScope) {
-  dependsOnIPipe(dhs)
-  dependsOnITests4j(dhs)
-}
-
 fun dependsOnMockito(dhs: DependencyHandlerScope) {
    dhs.implementation("org.mockito:mockito-all:1.10.19")
 }
@@ -50,6 +45,10 @@ fun dependsOnPipe(dhs: DependencyHandlerScope) {
    dhs.implementation(project("pipe.adligo.org"))
 }
 
+fun dependsOnTests4j(dhs: DependencyHandlerScope) {
+  dependsOnITests4j(dhs)
+  dhs.implementation(project("tests4j.adligo.org"))
+}
 
 project(":i_pipe.adligo.org") {
   allPlugins(this)
@@ -95,6 +94,25 @@ project(":pipe_tests.adligo.org") {
   }
 }
 
+project(":tests4j.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnITests4j(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":tests4j_4mockito.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnTests4j(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
 repositories {
   mavenLocal()
   mavenCentral()
