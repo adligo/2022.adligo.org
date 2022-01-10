@@ -1,9 +1,13 @@
+#!/bin/bash
+
 DIR=`pwd`
 
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+RED=RED
+NC=
+#RED='\033[0;31m'
+#NC='\033[0m' # No Color
 
-build_project() {
+function build_project() {
   echo building $1 with version $2  
   if [[ -d $DIR/$1 ]]; then
     echo "" #the dir exists
@@ -22,7 +26,7 @@ build_project() {
   fi
 }
 
-run_tests() {
+function run_tests() {
   echo running tests in $1 
   cd $DIR/$1
   status=$?
