@@ -12,7 +12,7 @@ git clone git@github.com:adligo/i_tests4j.adligo.org.git
 git clone git@github.com:adligo/mockito_ext.adligo.org.git
 
 git clone git@github.com:adligo/pipe.adligo.org.git
-git clone git@github.com:adligo/pipe_test.adligo.org.git
+git clone git@github.com:adligo/pipe_tests.adligo.org.git
 
 git clone git@github.com:adligo/tests4j.adligo.org.git
 git clone git@github.com:adligo/tests4j_4mockito.adligo.org.git
