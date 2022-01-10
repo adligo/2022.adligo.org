@@ -6,8 +6,11 @@ NC='\033[0m' # No Color
 build_project() {
   echo building $1 with version $2  
   if [[ -d $DIR/$1 ]]; then
+    echo "" #the dir exists
+  else
     echo -e "${RED} The directory $DIR/$1 does NOT Exist ${NC}"
     echo "Please run gitsub.sh first"
+    exit 0
   fi
   cd $DIR/$1
   status=$?
