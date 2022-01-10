@@ -10,4 +10,4 @@ Then download the other sub projects;
 - ./gitsub.sh
 
 Finally build it with Java (I'm on 11) and Gradle (I'm on 7.3.3)
-./build.sh
+- ./build.sh
