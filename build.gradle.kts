@@ -28,9 +28,21 @@ java {
   }
 }
 
-
 fun dependsOnIPipe(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_pipe.adligo.org"))
+}
+
+fun dependsOnITests4j(dhs: DependencyHandlerScope) {
+   dhs.implementation(project("i_tests4j.adligo.org"))
+}
+
+fun dependsOnAllIs(dhs: DependencyHandlerScope) {
+  dependsOnIPipe(dhs)
+  dependsOnITests4j(dhs)
+}
+
+fun dependsOnMockito(dhs: DependencyHandlerScope) {
+   dhs.implementation("org.mockito:mockito-all:1.10.19")
 }
 
 fun dependsOnPipe(dhs: DependencyHandlerScope) {
@@ -38,8 +50,26 @@ fun dependsOnPipe(dhs: DependencyHandlerScope) {
    dhs.implementation(project("pipe.adligo.org"))
 }
 
+
 project(":i_pipe.adligo.org") {
   allPlugins(this)
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":i_tests4j.adligo.org") {
+  allPlugins(this)
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":mockito_ext.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnMockito(this)
+  }
   repositories {
     allRepos(this)
   }
