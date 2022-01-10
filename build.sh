@@ -16,7 +16,7 @@ build_project() {
   status=$?
   gradle publishToMavenLocal -Ptag=$2
   status=$?
-  if [[ "0" == "$status" ]]; then
+  if [[ "0" != "$status" ]]; then
    echo -e "${RED} Build.sh Failed with exit code $status ${NC}"
    exit 0;
   fi
@@ -28,7 +28,7 @@ run_tests() {
   status=$?
   gradle build
   status=$?
-  if [[ "0" == "$status" ]]; then
+  if [[ "0" != "$status" ]]; then
    echo -e "${RED} Build.sh Failed with exit code $status ${NC}"
    exit 0;
   fi
