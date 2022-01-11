@@ -1,22 +1,33 @@
 #!/bin/bash
 
-DIR=`pwd`
+dir=`pwd`
 
 RED=RED
 NC=
 #RED='\033[0;31m'
 #NC='\033[0m' # No Color
 
+depotDir=$dir/depot
+if [[ "inJekins" == "$1" ]]; then
+  echo "rasign the depot dir for Jenkis which can't find it's own $BUILD_NUMBER variable!"
+  cd ..
+  upDir=`pwd`
+  depotDir=$upDir/depot
+  cd $dir
+else 
+  echo "Using the depot directory in the current dir."
+fi
+
 function build_project() {
   echo building $1 with version $2  
-  if [[ -d $DIR/$1 ]]; then
+  if [[ -d $dir/$1 ]]; then
     echo "" #the dir exists
   else
     echo -e "${RED} The directory $DIR/$1 does NOT Exist ${NC}"
     echo "Please run gitsub.sh first"
     exit 0
   fi
-  cd $DIR/$1
+  cd $dir/$1
   status=$?
   gradle publishToMavenLocal -Ptag=$2
   status=$?
@@ -28,7 +39,7 @@ function build_project() {
 
 function run_tests() {
   echo running tests in $1 
-  cd $DIR/$1
+  cd $dir/$1
   status=$?
   gradle build
   status=$?
@@ -36,16 +47,17 @@ function run_tests() {
    echo -e "${RED} Build.sh Failed with exit code $status ${NC}"
    exit 0;
   fi
-  cp build/test-results/test/*.xml $DIR/depot/tests
+  echo "copying tests to $depotDir/tests "
+  cp build/test-results/test/*.xml $depotDir/tests
 }
 
 # A Fabricate Style Depot :)
 # Without the Fabricate Style Concurrency :(
-if [[ -d depot ]]; then
-  rm -fr depot
+if [[ -d $depotDir ]]; then
+  rm -fr $depotDir
 fi
-mkdir depot
-mkdir depot/tests
+mkdir $depotDir
+mkdir $depotDir/tests
 
 build_project i_tests4j.adligo.org v0_1+_SNAPSHOT
 build_project i_pipe.adligo.org v0_4+_SNAPSHOT
