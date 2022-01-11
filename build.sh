@@ -8,7 +8,7 @@ NC=
 #NC='\033[0m' # No Color
 
 depotDir=$dir/depot
-if [[ "inJekins" == "$1" ]]; then
+if [[ "inJenkins" == "$1" ]]; then
   echo "rasign the depot dir for Jenkis which can't find it's own $BUILD_NUMBER variable!"
   cd ..
   upDir=`pwd`
