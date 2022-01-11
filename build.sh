@@ -36,12 +36,23 @@ function run_tests() {
    echo -e "${RED} Build.sh Failed with exit code $status ${NC}"
    exit 0;
   fi
+  cp build/test-results/test/*.xml $DIR/depot/tests
 }
+
+# A Fabricate Style Depot :)
+# Without the Fabricate Style Concurrency :(
+if [[ -d depot ]]; then
+  rm -fr depot
+fi
+mkdir depot
+mkdir depot/tests
 
 build_project i_tests4j.adligo.org v0_1+_SNAPSHOT
 build_project i_pipe.adligo.org v0_4+_SNAPSHOT
 
 build_project mockito_ext.adligo.org v0_1+_SNAPSHOT
 build_project tests4j4jj.adligo.org v0_1+_SNAPSHOT
+run_tests tests4j4jj_tests.adligo.org
+
 build_project pipe.adligo.org v0_1+_SNAPSHOT
 run_tests pipe_tests.adligo.org 

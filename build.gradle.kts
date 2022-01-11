@@ -35,8 +35,17 @@ fun dependsOnIPipe(dhs: DependencyHandlerScope) {
 fun dependsOnITests4j(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_tests4j.adligo.org"))
 }
+
+fun dependsOnTests4j4jj(dhs: DependencyHandlerScope) {
+  dependsOnITests4j(dhs)
+  dependsOnJUnit5(dhs)
+  dependsOnMockitoExt(dhs)
+  dhs.implementation(project("tests4j4jj.adligo.org"))
+}
+
 fun dependsOnJUnit5(dhs: DependencyHandlerScope) {
   dhs.implementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+  dhs.implementation("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 fun dependsOnMockito(dhs: DependencyHandlerScope) {
@@ -118,6 +127,16 @@ project(":tests4j4jj.adligo.org") {
     dependsOnITests4j(this)
     dependsOnJUnit5(this)
     dependsOnMockitoExt(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":tests4j4jj_tests.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnTests4j4jj(this)
   }
   repositories {
     allRepos(this)
