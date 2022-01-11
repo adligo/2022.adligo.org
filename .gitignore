@@ -22,6 +22,8 @@
 # Sub Projects
 artifactory_deploy.sh.adligo.org
 
+eclipse.adligo.org
+
 gradle_kt_examples.adligo.org
 
 i_pipe.adligo.org
@@ -36,6 +38,7 @@ tests4j.adligo.org
 tests4j_4mockito.adligo.org
 tests4j_tests.adligo.org
 tests4j4jj.adligo.org
+tests4j4jj_tests.adligo.org
 
 
 

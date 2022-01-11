@@ -4,6 +4,8 @@
 
 git clone git@github.com:adligo/artifactory_deploy.sh.adligo.org.git
 
+git clone git@github.com:adligo/eclipse.adligo.org.git
+
 git clone git@github.com:adligo/gradle_kt_examples.adligo.org.git
 
 git clone git@github.com:adligo/i_pipe.adligo.org.git
@@ -17,3 +19,4 @@ git clone git@github.com:adligo/pipe_tests.adligo.org.git
 git clone git@github.com:adligo/tests4j.adligo.org.git
 git clone git@github.com:adligo/tests4j_4mockito.adligo.org.git
 git clone git@github.com:adligo/tests4j4jj.adligo.org.git
+git clone git@github.com:adligo/tests4j4jj_tests.adligo.org.git
