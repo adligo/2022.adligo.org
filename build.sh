@@ -64,7 +64,7 @@ NC=
 depotDir=$dir/depot
 if [[ "$inJenkins" == "y" ]]; then
   echo "rasign the depot dir for Jenkis which can't find it's own $BUILD_NUMBER variable!"
-  cd ..
+  cd ../..
   upDir=`pwd`
   depotDir=$upDir/depot
   cd $dir
