@@ -67,6 +67,13 @@ fun dependsOnTests4j(dhs: DependencyHandlerScope) {
   dhs.implementation(project("tests4j.adligo.org"))
 }
 
+project(":i_ctx.adligo.org") {
+  allPlugins(this)
+  repositories {
+    allRepos(this)
+  }
+}
+
 project(":i_pipe.adligo.org") {
   allPlugins(this)
   repositories {
@@ -75,6 +82,13 @@ project(":i_pipe.adligo.org") {
 }
 
 project(":i_tests4j.adligo.org") {
+  allPlugins(this)
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":i_threads.adligo.org") {
   allPlugins(this)
   repositories {
     allRepos(this)
