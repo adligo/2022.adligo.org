@@ -161,4 +161,4 @@ build_project tests4j4jj.adligo.org v0_1+_SNAPSHOT
 run_tests tests4j4jj_tests.adligo.org
 
 build_project pipe.adligo.org v0_1+_SNAPSHOT
-run_tests pipe_tests.adligo.org 
+# run_tests pipe_tests.adligo.org 
