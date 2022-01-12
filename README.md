@@ -11,3 +11,12 @@ Then download the other sub projects;
 
 Finally build it with Java (I'm on 11) and Gradle (I'm on 7.3.3)
 - ./build.sh
+
+Additionally you can setup the Jenkins Build;
+
+## Jenkins on Mac OS
+- Mac / Linux Os; 
+- https://github.com/adligo/2022.adligo.org/tree/main/jenkins/mac
+
+## Jenkins on Windows
+- TODO

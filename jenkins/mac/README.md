@@ -19,3 +19,10 @@ cd 2022.adligo.org
 ./gitsub.sh
 ./build.sh -j
 ```
+
+Then install the following Jenkins plugins (if there not installed);
+- JUnit (Note sometimes restarting tomcate multiple times is required)
+
+Then create a Publish JUnit test result report at the bottom under Post-build Actions;
+- Test report XMLs
+- **/depot/tests/*.xml
