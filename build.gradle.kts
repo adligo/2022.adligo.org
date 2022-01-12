@@ -28,8 +28,16 @@ java {
   }
 }
 
+fun dependsOnICtx(dhs: DependencyHandlerScope) {
+   dhs.implementation(project("i_ctx.adligo.org"))
+}
+
 fun dependsOnIPipe(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_pipe.adligo.org"))
+}
+
+fun dependsOnIThreads(dhs: DependencyHandlerScope) {
+   dhs.implementation(project("i_threads.adligo.org"))
 }
 
 fun dependsOnITests4j(dhs: DependencyHandlerScope) {
@@ -74,6 +82,23 @@ project(":i_ctx.adligo.org") {
   }
 }
 
+project(":i_ctx4jse.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnICtx(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":i_ctx4jse.adligo.org") {
+  allPlugins(this)
+  repositories {
+    allRepos(this)
+  }
+}
+
 project(":i_pipe.adligo.org") {
   allPlugins(this)
   repositories {
@@ -95,6 +120,15 @@ project(":i_threads.adligo.org") {
   }
 }
 
+project(":i_threads4jse.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnIThreads(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
 project(":mockito_ext.adligo.org") {
   allPlugins(this)
   dependencies {
