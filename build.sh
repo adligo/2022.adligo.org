@@ -27,7 +27,7 @@ dir=`pwd`
 while (( "$#" )); do
   case "$1" in
     -b | --begin)   begin=$2 ; shift 2  ;;
-    -j | --inJenkins)   inJenkins="7" ; shift 1  ;;
+    -j | --inJenkins)   inJenkins="y" ; shift 1  ;;
     -h | --help) help="y" ; shift 1 ;;
     -p | --pull) pull="y" ; shift 1 ;;
     -s | --skipTests) skipTests="y" ; shift 1 ;;
@@ -154,6 +154,7 @@ build_project i_ctx.adligo.org v0_1+_SNAPSHOT
 build_project i_tests4j.adligo.org v0_1+_SNAPSHOT
 build_project i_pipe.adligo.org v0_4+_SNAPSHOT
 build_project i_threads.adligo.org v0_1+_SNAPSHOT
+
 
 build_project mockito_ext.adligo.org v0_1+_SNAPSHOT
 build_project tests4j4jj.adligo.org v0_1+_SNAPSHOT
