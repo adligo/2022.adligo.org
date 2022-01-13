@@ -152,7 +152,7 @@ mkdir $depotDir/tests
 
 build_project i_ctx.adligo.org v0_1+_SNAPSHOT
 build_project i_ctx4jse.adligo.org v0_1+_SNAPSHOT
-build_project i_tests4j.adligo.org v0_1
+build_project i_tests4j.adligo.org v0_2+_SNAPSHOT
 build_project i_pipe.adligo.org v0_4+_SNAPSHOT
 build_project i_threads.adligo.org v0_1+_SNAPSHOT
 build_project i_threads4jse.adligo.org v0_1+_SNAPSHOT
@@ -161,7 +161,7 @@ build_project ctx.adligo.org v0_1+_SNAPSHOT
 build_project ctx4jse.adligo.org v0_1+_SNAPSHOT
 
 build_project mockito_ext.adligo.org v0_1+_SNAPSHOT
-build_project tests4j4jj.adligo.org v0_1
+build_project tests4j4jj.adligo.org v0_2+_SNAPSHOT
 run_tests tests4j4jj_tests.adligo.org
 
 build_project pipe.adligo.org v0_1+_SNAPSHOT

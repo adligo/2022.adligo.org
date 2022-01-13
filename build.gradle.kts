@@ -1,6 +1,31 @@
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+/**
+ * This is a new fangled way to build Java using Kotlin :)
+ * 
+ * @author scott
+ *         <pre>
+ *         <code>
+ * ---------------- Apache ICENSE-2.0 --------------------------
+ *
+ * Copyright 2022 Adligo Inc
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * </code>
+ * 
+ *         <pre>
+ */
 fun allPlugins(p: Project) {
   p.apply(plugin="java")
   p.apply(plugin="eclipse")
@@ -31,6 +56,11 @@ java {
 fun dependsOnCtx(dhs: DependencyHandlerScope) {
    dependsOnICtx4Jse(dhs)
    dhs.implementation(project("ctx.adligo.org"))
+}
+
+fun dependsOnCtx4Jse(dhs: DependencyHandlerScope) {
+   dependsOnCtx(dhs)
+   dhs.implementation(project("ctx4jse.adligo.org"))
 }
 
 fun dependsOnICtx(dhs: DependencyHandlerScope) {
@@ -89,6 +119,18 @@ project(":ctx.adligo.org") {
   allPlugins(this)
   dependencies {
     dependsOnICtx4Jse(this)
+    dependsOnTests4j4jj(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":ctx_tests.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnCtx(this)
+    dependsOnTests4j4jj(this)
   }
   repositories {
     allRepos(this)
@@ -99,6 +141,16 @@ project(":ctx4jse.adligo.org") {
   allPlugins(this)
   dependencies {
     dependsOnCtx(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":ctx4jse_tests.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnCtx4Jse(this)
   }
   repositories {
     allRepos(this)
