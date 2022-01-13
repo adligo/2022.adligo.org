@@ -119,6 +119,7 @@ project(":ctx.adligo.org") {
   allPlugins(this)
   dependencies {
     dependsOnICtx4Jse(this)
+    dependsOnIThreads(this)
     dependsOnTests4j4jj(this)
   }
   repositories {
