@@ -28,8 +28,18 @@ java {
   }
 }
 
+fun dependsOnCtx(dhs: DependencyHandlerScope) {
+   dependsOnICtx4Jse(dhs)
+   dhs.implementation(project("ctx.adligo.org"))
+}
+
 fun dependsOnICtx(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_ctx.adligo.org"))
+}
+
+fun dependsOnICtx4Jse(dhs: DependencyHandlerScope) {
+   dependsOnICtx(dhs)
+   dhs.implementation(project("i_ctx4jse.adligo.org"))
 }
 
 fun dependsOnIPipe(dhs: DependencyHandlerScope) {
@@ -73,6 +83,26 @@ fun dependsOnPipe(dhs: DependencyHandlerScope) {
 fun dependsOnTests4j(dhs: DependencyHandlerScope) {
   dependsOnITests4j(dhs)
   dhs.implementation(project("tests4j.adligo.org"))
+}
+
+project(":ctx.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnICtx4Jse(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":ctx4jse.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnCtx(this)
+  }
+  repositories {
+    allRepos(this)
+  }
 }
 
 project(":i_ctx.adligo.org") {
