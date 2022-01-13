@@ -158,6 +158,7 @@ build_project i_threads.adligo.org v0_1+_SNAPSHOT
 build_project i_threads4jse.adligo.org v0_1+_SNAPSHOT
 
 build_project ctx.adligo.org v0_1+_SNAPSHOT
+build_project ctx4jse.adligo.org v0_1+_SNAPSHOT
 
 build_project mockito_ext.adligo.org v0_1+_SNAPSHOT
 build_project tests4j4jj.adligo.org v0_1+_SNAPSHOT
