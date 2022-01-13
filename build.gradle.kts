@@ -55,6 +55,7 @@ java {
 
 fun dependsOnCtx(dhs: DependencyHandlerScope) {
    dependsOnICtx4Jse(dhs)
+   dependsOnIThreads(dhs)
    dhs.implementation(project("ctx.adligo.org"))
 }
 
