@@ -18,17 +18,21 @@ depot
 *.ear
 *.zip
 *.tar.gz
+
 *.rar
 
 # Sub Projects
 artifactory_deploy.sh.adligo.org
 
 ctx.adligo.org
+ctx_tests.adligo.org
 ctx4jse.adligo.org
+ctx4jse_tests.adligo.org
 
 eclipse.adligo.org
 
 gradle_kt_examples.adligo.org
+gwt_ctx_example.adligo.org
 
 i_ctx.adligo.org
 i_ctx4jse.adligo.org

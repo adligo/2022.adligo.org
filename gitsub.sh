@@ -33,6 +33,7 @@ git clone git@github.com:adligo/ctx4jse_tests.adligo.org.git
 git clone git@github.com:adligo/eclipse.adligo.org.git
 
 git clone git@github.com:adligo/gradle_kt_examples.adligo.org.git
+git clone git@github.com:adligo/gwt_ctx_example.adligo.org.git
 
 git clone git@github.com:adligo/i_ctx.adligo.org.git
 git clone git@github.com:adligo/i_ctx4jse.adligo.org.git

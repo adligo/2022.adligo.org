@@ -121,7 +121,6 @@ project(":ctx.adligo.org") {
   dependencies {
     dependsOnICtx4Jse(this)
     dependsOnIThreads(this)
-    dependsOnTests4j4jj(this)
   }
   repositories {
     allRepos(this)
@@ -153,6 +152,17 @@ project(":ctx4jse_tests.adligo.org") {
   allPlugins(this)
   dependencies {
     dependsOnCtx4Jse(this)
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
+project(":gwt_ctx_example.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    implementation("com.google.gwt:gwt-user:2.9.0")
+    implementation("com.google.gwt:gwt-dev:2.9.0")
   }
   repositories {
     allRepos(this)
