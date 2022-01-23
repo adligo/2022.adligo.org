@@ -27,8 +27,6 @@ git clone git@github.com:adligo/artifactory_deploy.sh.adligo.org.git
 
 git clone git@github.com:adligo/ctx.adligo.org.git
 git clone git@github.com:adligo/ctx_tests.adligo.org.git
-git clone git@github.com:adligo/ctx4jse.adligo.org.git
-git clone git@github.com:adligo/ctx4jse_tests.adligo.org.git
 
 git clone git@github.com:adligo/eclipse.adligo.org.git
 

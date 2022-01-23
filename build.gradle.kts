@@ -138,29 +138,10 @@ project(":ctx_tests.adligo.org") {
   }
 }
 
-project(":ctx4jse.adligo.org") {
-  allPlugins(this)
-  dependencies {
-    dependsOnCtx(this)
-  }
-  repositories {
-    allRepos(this)
-  }
-}
-
-project(":ctx4jse_tests.adligo.org") {
-  allPlugins(this)
-  dependencies {
-    dependsOnCtx4Jse(this)
-  }
-  repositories {
-    allRepos(this)
-  }
-}
-
 project(":gwt_ctx_example.adligo.org") {
   allPlugins(this)
   dependencies {
+    dependsOnCtx(this)
     implementation("com.google.gwt:gwt-user:2.9.0")
     implementation("com.google.gwt:gwt-dev:2.9.0")
   }
