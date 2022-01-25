@@ -85,6 +85,10 @@ fun dependsOnITests4j(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_tests4j.adligo.org"))
 }
 
+fun dependsOnJaxb(dhs: DependencyHandlerScope) {
+  dhs.implementation("javax.xml.bind:jaxb-api:2.4.0-b180830.0359") 
+}
+
 fun dependsOnTests4j4jj(dhs: DependencyHandlerScope) {
   dependsOnITests4j(dhs)
   dependsOnJUnit5(dhs)
@@ -113,6 +117,7 @@ fun dependsOnPipe(dhs: DependencyHandlerScope) {
 
 fun dependsOnTests4j(dhs: DependencyHandlerScope) {
   dependsOnITests4j(dhs)
+  dependsOnJaxb(dhs)
   dhs.implementation(project("tests4j.adligo.org"))
 }
 
@@ -238,6 +243,7 @@ project(":tests4j.adligo.org") {
   allPlugins(this)
   dependencies {
     dependsOnITests4j(this)
+    dependsOnJaxb(this)
   }
   repositories {
     allRepos(this)
@@ -269,7 +275,10 @@ project(":tests4j4jj_tests.adligo.org") {
 project(":tests4j_4mockito.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnTests4j(this)
+    dependsOnTests4j(this) 
+    //an old version of Mockito that uses jdk 1.5 byte code for Apache Beam
+    implementation("org.mockito:mockito-all:1.10.19")
+    implementation(project(":tests4j.adligo.org"))
   }
   repositories {
     allRepos(this)
