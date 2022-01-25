@@ -23,4 +23,4 @@ Additionally you can setup the Jenkins Build;
 - https://github.com/adligo/2022.adligo.org/tree/main/jenkins/mac
 
 ## Jenkins on Windows
-- TODO
+- https://github.com/adligo/2022.adligo.org/tree/main/jenkins/windows
