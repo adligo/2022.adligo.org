@@ -83,3 +83,4 @@ clone git@github.com:adligo/tests4j4jj.adligo.org.git
 clone git@github.com:adligo/tests4j4jj_tests.adligo.org.git
 clone git@github.com:adligo/threads.adligo.org.git
 
+wait
