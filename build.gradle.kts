@@ -122,19 +122,11 @@ fun dependsOnTests4j(dhs: DependencyHandlerScope) {
 }
 
 fun javaSrc(ssc: SourceSetContainer) {
-  ssc.main {
-    java {
-      srcDirs("src")
-    }
-  }
+  ssc.main { java { srcDirs("src") } }
 }
 
 fun testSrc(ssc: SourceSetContainer) {
-  ssc.test {
-    java {
-      srcDirs("src")
-    }
-  }
+  ssc.test { java { srcDirs("src") } }
 }
 
 project(":ctx.adligo.org") {
