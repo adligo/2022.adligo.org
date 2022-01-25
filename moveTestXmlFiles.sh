@@ -65,6 +65,8 @@ fi
 
 function move_test_xml_files() {
   cd $dir/$1
+  echo "in; "
+  pwd
   echo "copying tests to $depotDir/tests "
   cp build/test-results/test/*.xml $depotDir/tests
 }
