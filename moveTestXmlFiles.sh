@@ -64,7 +64,7 @@ else
 fi
 
 function move_test_xml_files() {
-  cd $1
+  cd $dir/$1
   echo "copying tests to $depotDir/tests "
   cp build/test-results/test/*.xml $depotDir/tests
 }
