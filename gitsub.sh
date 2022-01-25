@@ -51,9 +51,9 @@ function clone() {
 }
 
 function clone_async() {
-  echo "cloning $1 async"
+  #echo "cloning $1 async"
   git clone $1
-  echo "finished clone of $1"
+  #echo "finished clone of $1"
 }
 clone git@github.com:adligo/artifactory_deploy.sh.adligo.org.git
 
