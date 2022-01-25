@@ -11,14 +11,14 @@ You should now be able to navigate to;
 - http://localhost:8080/jenkins
 
 Then add this code to a Execute Shell Step;
-```
-mkdir $BUILD_NUMBER
-cd $BUILD_NUMBER
-git clone git@github.com:adligo/2022.adligo.org.git
-cd 2022.adligo.org
-./gitsub.sh
-./build.sh -j
-```
+- mkdir $BUILD_NUMBER
+- cd  $BUILD_NUMBER
+- git clone git@github.com:adligo/2022.git
+- cd  2022
+- ./gitsub.sh -a
+- gradle clean build --parallel
+- ./moveTestXmlFiles.sh -j
+
 
 Then install the following Jenkins plugins (if there not installed);
 - JUnit (Note sometimes restarting tomcate multiple times is required)
