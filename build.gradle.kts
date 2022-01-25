@@ -138,9 +138,6 @@ project(":ctx.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":ctx_tests.adligo.org") {
@@ -151,12 +148,6 @@ project(":ctx_tests.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    testSrc(this)
-  }
-  tasks.named<Test>("test") {
-    useJUnitPlatform()
   }
 }
 
@@ -170,21 +161,12 @@ project(":gwt_ctx_example.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":i_ctx.adligo.org") {
   allPlugins(this)
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -196,18 +178,12 @@ project(":i_ctx4jse.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":i_ctx4jse.adligo.org") {
   allPlugins(this)
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -216,9 +192,6 @@ project(":i_pipe.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":i_tests4j.adligo.org") {
@@ -226,18 +199,12 @@ project(":i_tests4j.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":i_threads.adligo.org") {
   allPlugins(this)
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -249,9 +216,6 @@ project(":i_threads4jse.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 project(":mockito_ext.adligo.org") {
   allPlugins(this)
@@ -260,9 +224,6 @@ project(":mockito_ext.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -274,9 +235,6 @@ project(":pipe.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":pipe_tests.adligo.org") {
@@ -286,9 +244,6 @@ project(":pipe_tests.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -300,9 +255,6 @@ project(":tests4j.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 
@@ -316,9 +268,6 @@ project(":tests4j4jj.adligo.org") {
   repositories {
     allRepos(this)
   }
-  sourceSets {
-    javaSrc(this)
-  }
 }
 
 project(":tests4j4jj_tests.adligo.org") {
@@ -328,9 +277,6 @@ project(":tests4j4jj_tests.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    testSrc(this)
   }
 }
 
@@ -344,9 +290,6 @@ project(":tests4j_4mockito.adligo.org") {
   }
   repositories {
     allRepos(this)
-  }
-  sourceSets {
-    javaSrc(this)
   }
 }
 repositories {
