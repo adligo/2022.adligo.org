@@ -82,5 +82,4 @@ mkdir $depotDir/tests
 move_test_xml_files ctx_tests.adligo.org 
 move_test_xml_files tests4j4jj_tests.adligo.org
 
-build_project pipe.adligo.org v0_1+_SNAPSHOT
 # run_tests pipe_tests.adligo.org 
