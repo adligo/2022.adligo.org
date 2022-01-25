@@ -1,3 +1,5 @@
+#!/bin/bash
+#include <unistd.h>
 #
 # This checksout the sub projects, which are ignored
 # These are in alphabetical order
@@ -23,31 +25,61 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-git clone git@github.com:adligo/artifactory_deploy.sh.adligo.org.git
 
-git clone git@github.com:adligo/ctx.adligo.org.git
-git clone git@github.com:adligo/ctx_tests.adligo.org.git
+# Thanks https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
+while (( "$#" )); do
+  case "$1" in
+    -a | --async)   async="y" ; shift 1  ;;
+    -h | --help) help="y" ; shift 1 ;;
+    -*|--*=) # unsupported flags
+      echo "Error: Unsupported flag $1" >&2
+      exit 1
+      ;;
+    *) # preserve positional arguments
+      PARAMS="$PARAMS $1"
+      shift
+      ;;
+  esac
+done
 
-git clone git@github.com:adligo/eclipse.adligo.org.git
+function clone() {
+  if [[ "$async" == "y" ]]; then
+    clone_async $1 &
+  else 
+    git clone $1 
+  fi
+}
 
-git clone git@github.com:adligo/gradle_kt_examples.adligo.org.git
-git clone git@github.com:adligo/gwt_ctx_example.adligo.org.git
+function clone_async() {
+  echo "cloning $1 async"
+  git clone $1
+  echo "finished clone of $1"
+}
+clone git@github.com:adligo/artifactory_deploy.sh.adligo.org.git
 
-git clone git@github.com:adligo/i_ctx.adligo.org.git
-git clone git@github.com:adligo/i_ctx4jse.adligo.org.git
-git clone git@github.com:adligo/i_pipe.adligo.org.git
-git clone git@github.com:adligo/i_tests4j.adligo.org.git
-git clone git@github.com:adligo/i_threads.adligo.org.git
-git clone git@github.com:adligo/i_threads4jse.adligo.org.git
+clone git@github.com:adligo/ctx.adligo.org.git
+clone git@github.com:adligo/ctx_tests.adligo.org.git
 
-git clone git@github.com:adligo/mockito_ext.adligo.org.git
+clone git@github.com:adligo/eclipse.adligo.org.git
 
-git clone git@github.com:adligo/pipe.adligo.org.git
-git clone git@github.com:adligo/pipe_tests.adligo.org.git
+clone git@github.com:adligo/gradle_kt_examples.adligo.org.git
+clone git@github.com:adligo/gwt_ctx_example.adligo.org.git
 
-git clone git@github.com:adligo/tests4j.adligo.org.git
-git clone git@github.com:adligo/tests4j_4mockito.adligo.org.git
-git clone git@github.com:adligo/tests4j4jj.adligo.org.git
-git clone git@github.com:adligo/tests4j4jj_tests.adligo.org.git
-git clone git@github.com:adligo/threads.adligo.org.git
+clone git@github.com:adligo/i_ctx.adligo.org.git
+clone git@github.com:adligo/i_ctx4jse.adligo.org.git
+clone git@github.com:adligo/i_pipe.adligo.org.git
+clone git@github.com:adligo/i_tests4j.adligo.org.git
+clone git@github.com:adligo/i_threads.adligo.org.git
+clone git@github.com:adligo/i_threads4jse.adligo.org.git
+
+clone git@github.com:adligo/mockito_ext.adligo.org.git
+
+clone git@github.com:adligo/pipe.adligo.org.git
+clone git@github.com:adligo/pipe_tests.adligo.org.git
+
+clone git@github.com:adligo/tests4j.adligo.org.git
+clone git@github.com:adligo/tests4j_4mockito.adligo.org.git
+clone git@github.com:adligo/tests4j4jj.adligo.org.git
+clone git@github.com:adligo/tests4j4jj_tests.adligo.org.git
+clone git@github.com:adligo/threads.adligo.org.git
 
