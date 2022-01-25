@@ -54,7 +54,7 @@ NC=
 
 depotDir=$dir/depot
 if [[ "$inJenkins" == "y" ]]; then
-  echo "rasign the depot dir for Jenkis which can't find it's own $BUILD_NUMBER variable!"
+  echo "creating the depot dir for Jenkis which can't find it's own $BUILD_NUMBER variable!"
   cd ../..
   upDir=`pwd`
   depotDir=$upDir/depot
@@ -64,6 +64,7 @@ else
 fi
 
 function move_test_xml_files() {
+  cd $1
   echo "copying tests to $depotDir/tests "
   cp build/test-results/test/*.xml $depotDir/tests
 }
