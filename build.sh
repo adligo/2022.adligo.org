@@ -158,7 +158,7 @@ build_project i_threads.adligo.org v0_1+_SNAPSHOT
 build_project i_threads4jse.adligo.org v0_1+_SNAPSHOT
 
 build_project ctx.adligo.org v0_1+_SNAPSHOT
-build_project ctx_tests.adligo.org v0_1+_SNAPSHOT
+run_tests ctx_tests.adligo.org v0_1+_SNAPSHOT
 
 build_project gwt_ctx_example.adligo.org v0_1+_SNAPSHOT
 
