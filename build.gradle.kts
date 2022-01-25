@@ -155,6 +155,9 @@ project(":ctx_tests.adligo.org") {
   sourceSets {
     testSrc(this)
   }
+  tasks.named<Test>("test") {
+    useJUnitPlatform()
+  }
 }
 
 project(":gwt_ctx_example.adligo.org") {
