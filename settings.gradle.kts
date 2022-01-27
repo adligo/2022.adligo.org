@@ -1,5 +1,5 @@
 
-rootProject.name = "2022"
+rootProject.name = "2022.adligo.org"
 include(
 "ctx.adligo.org", "ctx_tests.adligo.org",
 "gwt_ctx_example.adligo.org",
