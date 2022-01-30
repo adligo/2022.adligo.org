@@ -58,35 +58,36 @@ java {
 }
  
 fun dependsOnCtx(dhs: DependencyHandlerScope) {
-   dependsOnICtx4Jse(dhs)
-   dependsOnIThreads(dhs)
+   dependsOnI_Ctx4Jse(dhs)
+   dependsOnI_Threads4jse(dhs)
    dhs.implementation(project("ctx.adligo.org"))
 }
 
-fun dependsOnCtx4Jse(dhs: DependencyHandlerScope) {
-   dependsOnCtx(dhs)
-   dhs.implementation(project("ctx4jse.adligo.org"))
-}
 
-fun dependsOnICtx(dhs: DependencyHandlerScope) {
+fun dependsOnI_Ctx(dhs: DependencyHandlerScope) {
    dhs.implementation(project("i_ctx.adligo.org"))
 }
 
-fun dependsOnICtx4Jse(dhs: DependencyHandlerScope) {
-   dependsOnICtx(dhs)
+fun dependsOnI_Ctx4Jse(dhs: DependencyHandlerScope) {
+   dependsOnI_Ctx(dhs)
    dhs.implementation(project("i_ctx4jse.adligo.org"))
 }
 
-fun dependsOnIPipe(dhs: DependencyHandlerScope) {
-   dhs.implementation(project("i_pipe.adligo.org"))
+fun dependsOnI_Pipe(dhs: DependencyHandlerScope) {
+  dhs.implementation(project("i_pipe.adligo.org"))
 }
 
-fun dependsOnIThreads(dhs: DependencyHandlerScope) {
-   dhs.implementation(project("i_threads.adligo.org"))
+fun dependsOnI_Threads(dhs: DependencyHandlerScope) {
+  dhs.implementation(project("i_threads.adligo.org"))
 }
 
-fun dependsOnITests4j(dhs: DependencyHandlerScope) {
-   dhs.implementation(project("i_tests4j.adligo.org"))
+fun dependsOnI_Threads4jse(dhs: DependencyHandlerScope) {
+  dependsOnI_Threads(dhs)
+  dhs.implementation(project("i_threads4jse.adligo.org"))
+}
+
+fun dependsOnI_Tests4j(dhs: DependencyHandlerScope) {
+  dhs.implementation(project("i_tests4j.adligo.org"))
 }
 
 fun dependsOnJaxb(dhs: DependencyHandlerScope) {
@@ -94,7 +95,7 @@ fun dependsOnJaxb(dhs: DependencyHandlerScope) {
 }
 
 fun dependsOnTests4j4jj(dhs: DependencyHandlerScope) {
-  dependsOnITests4j(dhs)
+  dependsOnI_Tests4j(dhs)
   dependsOnJUnit5(dhs)
   dependsOnMockitoExt(dhs)
   dhs.implementation(project("tests4j4jj.adligo.org"))
@@ -115,12 +116,12 @@ fun dependsOnMockitoExt(dhs: DependencyHandlerScope) {
 }
 
 fun dependsOnPipe(dhs: DependencyHandlerScope) {
-   dependsOnIPipe(dhs)
+   dependsOnI_Pipe(dhs)
    dhs.implementation(project("pipe.adligo.org"))
 }
 
 fun dependsOnTests4j(dhs: DependencyHandlerScope) {
-  dependsOnITests4j(dhs)
+  dependsOnI_Tests4j(dhs)
   dependsOnJaxb(dhs)
   dhs.implementation(project("tests4j.adligo.org"))
 }
@@ -167,8 +168,8 @@ fun testSrc(ssc: SourceSetContainer) {
 project(":ctx.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnICtx4Jse(this)
-    dependsOnIThreads(this)
+    dependsOnI_Ctx4Jse(this)
+    dependsOnI_Threads4jse(this)
   }
   repositories {
     allRepos(this)
@@ -214,7 +215,7 @@ project(":i_ctx4jse.adligo.org") {
     onEclipse(this)
   }
   dependencies {
-    dependsOnICtx(this)
+    dependsOnI_Ctx(this)
   }
   repositories {
     allRepos(this)
@@ -252,7 +253,7 @@ project(":i_threads.adligo.org") {
 project(":i_threads4jse.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnIThreads(this)
+    dependsOnI_Threads(this)
   }
   repositories {
     allRepos(this)
@@ -271,7 +272,7 @@ project(":mockito_ext.adligo.org") {
 project(":pipe.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnIPipe(this)
+    dependsOnI_Pipe(this)
   }
   repositories {
     allRepos(this)
@@ -291,7 +292,7 @@ project(":pipe_tests.adligo.org") {
 project(":tests4j.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnITests4j(this)
+    dependsOnI_Tests4j(this)
     dependsOnJaxb(this)
   }
   repositories {
@@ -302,7 +303,7 @@ project(":tests4j.adligo.org") {
 project(":tests4j4jj.adligo.org") {
   allPlugins(this)
   dependencies {
-    dependsOnITests4j(this)
+    dependsOnI_Tests4j(this)
     dependsOnJUnit5(this)
     dependsOnMockitoExt(this)
   }
@@ -333,6 +334,17 @@ project(":tests4j_4mockito.adligo.org") {
     allRepos(this)
   }
 }
+
+project(":threads.adligo.org") {
+  allPlugins(this)
+  dependencies {
+    dependsOnI_Threads4jse(this) 
+  }
+  repositories {
+    allRepos(this)
+  }
+}
+
 repositories {
   mavenLocal()
   mavenCentral()
