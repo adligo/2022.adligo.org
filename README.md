@@ -1,7 +1,7 @@
 # 2022
 Note this project was abandoned and replaced by many other projects most notibly;
 
-No Jdk 1.9 modulew
+No Jdk 1.9 modules
 - https://github.com/adligo/jse8-core.adligo.org
 
 With Jdk 1.9 modules
